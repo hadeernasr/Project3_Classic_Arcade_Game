@@ -55,21 +55,25 @@ var Player = function (locX, locY){
 };
 
 Player.prototype.update = function(){
-    if (this.x < 40){
-        this.x = 0;
+    if (this.x < 10){
+        this.x = 10;
     }
     else if (this.x > 400){
         this.x = 400;
     }
-    else if (this.y < 40){
-        this.y = 0;
+    else if (this.y < 5){
+        this.y = 5;
     }
-    else if (this.y > 400){
-        this.y = 400;
+    else if (this.y > 410){
+        this.y = 410;
     }
-    else if (this.collision() == false){
-        this.y = 600;
+    else if (this.y < 10 && this.x <= 450){
+        this.resetPlayer();
     }
+    else if (this.collision()== true){
+        this.resetPlayer();
+    }
+
 };
 
 Player.prototype.render = function(){
@@ -98,7 +102,8 @@ Player.prototype.handleInput = function(key){
 Player.prototype.collision = function(){
     for(var i=0; i < allEnemies.length; i++) {
         if (this.x < allEnemies[i].x + 50 && this.x + 50 > allEnemies[i].x && this.y < allEnemies[i].y + 30 && this.y + 30 > allEnemies[i].y) {
-           this.resetPlayer();
+           console.log("fail");
+           return true;
         }
     }
 };
@@ -107,6 +112,7 @@ Player.prototype.resetPlayer = function(){
     this.x = 200;
     this.y = 400;
 };
+
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
