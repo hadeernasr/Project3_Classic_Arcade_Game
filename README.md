@@ -5,13 +5,13 @@ Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015
 
 for self-checking their submission.
 
-# Classic Arcade Game Clone
-----------------------------
+#Project Name : Classic Arcade Game Clone
+-------------------------------------------
 
-**The Project contains three main files**
+**Project details
+The Project contains three main files**
 
-## Engine.js File
-----------------
+**Engine.js File
 This file provides the game loop functionality (update entities and render),
 draws the initial game board on the screen, and then calls the update and
 render methods on your player and enemy objects (defined in your app.js).
@@ -22,8 +22,7 @@ the screen, it may look like just that image/character is moving or being
 drawn but that is not the case. What's really happening is the entire "scene"
 is being drawn over and over, presenting the illusion of animation.
 
-## App.js file 
----------------
+**App.js file 
 This file contains the Enemy and Player classes and it's functions
 
 Enemy class contains :
@@ -39,9 +38,19 @@ Player Class contains :
 	4.Reset Function to reset the player position. 
 
 
-## Resources.js file
----------------------
+**Resources.js file
  This is simple an image loading utility. It eases the process of loading
  image files so that they can be used within your game. It also includes
  a simple "caching" layer so it will reuse cached images if you attempt
  to load the same image multiple times.
+
+#Game installation
+--------------------
+**Open The Index.html file using web browser to run the game
+
+#Play the game as follow
+------------------------
+	1.Use arrows buttons to move the player up and down or right and left.
+	2.The player wins when reach the water area and will reset to the frist position.
+	3.If the player and Enemies collide the player will reset to the frist postion.
+

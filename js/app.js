@@ -61,16 +61,16 @@ Player.prototype.update = function(){
     else if (this.x > 400){
         this.x = 400;
     }
-    else if (this.y < 5){
-        this.y = 5;
+    else if (this.y < 0){
+        this.y = 0;
     }
     else if (this.y > 410){
         this.y = 410;
     }
-    else if (this.y < 10 && this.x <= 450){
+    else if (this.y < 5 && this.x <= 450){
         this.resetPlayer();
     }
-    else if (this.collision()== true){
+    else if (this.collision() === true){
         this.resetPlayer();
     }
 
@@ -83,18 +83,18 @@ Player.prototype.render = function(){
 Player.prototype.handleInput = function(key){
     switch (key){
         case 'left':
-            this.x = this.x - 40;
+            this.x = this.x - 100;
             break;
         case 'right':
-            this.x = this.x + 40;
+            this.x = this.x + 100;
             break;
         case 'up':
-            this.y = this.y - 40;
+            this.y = this.y - 85;
             break;
         case 'down':
-            this.y = this.y + 40;
+            this.y = this.y + 85;
             break;
-    };
+    }
 };
 
 
@@ -110,7 +110,7 @@ Player.prototype.collision = function(){
 
 Player.prototype.resetPlayer = function(){
     this.x = 200;
-    this.y = 400;
+    this.y = 440;
 };
 
 // Now instantiate your objects.
